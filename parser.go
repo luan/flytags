@@ -82,7 +82,7 @@ func (p *tagParser) parse(f io.Reader) {
 			continue
 		}
 
-		lineRegexp := regexp.MustCompile("^- name: (.*)")
+		lineRegexp := regexp.MustCompile("^\\s*- name: (.*)")
 		lineMatch := lineRegexp.FindStringSubmatch(line)
 		if len(lineMatch) > 0 {
 			name := lineMatch[1]
